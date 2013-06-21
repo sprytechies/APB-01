@@ -16,6 +16,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+                'ext.YiiMongoDbSuite.*',
 	),
 
 	'modules'=>array(
@@ -36,6 +37,14 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
+                'mongodb' => array(
+                    'class'            => 'EMongoDB',
+                    'connectionString' => 'mongodb://localhost',
+                    'dbName'           => 'africaphonebook',
+                    'fsyncFlag'        => true,
+                    'safeFlag'         => true,
+                    'useCursor'        => false
+                ),
 		// uncomment the following to enable URLs in path-format
 		/*
 		'urlManager'=>array(
@@ -47,9 +56,9 @@ return array(
 			),
 		),
 		*/
-		'db'=>array(
+		/*'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
-		),
+		),*/
 		// uncomment the following to use a MySQL database
 		/*
 		'db'=>array(
